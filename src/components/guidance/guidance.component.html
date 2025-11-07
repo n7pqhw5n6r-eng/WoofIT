@@ -1,0 +1,26 @@
+<section class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-gray-800">Expert Guidance & Support</h2>
+      <a href="#" class="mt-4 inline-flex items-center gap-2 text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+        <span>View All Resources</span>
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+      </a>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (card of guidanceCards(); track card.title) {
+        <div [class]="'rounded-2xl p-8 flex flex-col items-center text-center ' + card.bgColor">
+          <img [src]="card.image" alt="{{ card.title }}" class="w-full h-48 object-cover rounded-lg mb-6" />
+          <h3 class="text-2xl font-bold text-gray-800 flex-grow">{{ card.title }}</h3>
+          <a href="#" class="mt-6 inline-flex items-center gap-2 text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+            <span>Learn More</span>
+             <div class="bg-orange-500 rounded-full w-6 h-6 flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

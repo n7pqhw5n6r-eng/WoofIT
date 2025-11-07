@@ -1,0 +1,24 @@
+<section class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-gray-800">Recommended for You</h2>
+    </div>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (article of articles(); track article.title) {
+        <div class="bg-gray-50 rounded-2xl overflow-hidden flex flex-col">
+          <img [src]="article.image" [alt]="article.title" class="w-full h-48 object-cover">
+          <div class="p-6 flex flex-col flex-grow">
+            <p class="text-orange-500 font-semibold text-sm">{{ article.category }}</p>
+            <h3 class="mt-2 text-xl font-bold text-gray-800 flex-grow">{{ article.title }}</h3>
+            <a href="#" class="mt-6 inline-flex items-center gap-2 text-orange-500 font-semibold hover:text-orange-600 transition-colors self-start">
+              <span>{{ article.linkText }}</span>
+               <div class="bg-orange-500 rounded-full w-6 h-6 flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
